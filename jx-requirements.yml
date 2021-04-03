@@ -18,13 +18,13 @@ spec:
   - key: staging
   - key: production
   ingress:
-    domain: ""
+    domain: "cloudgitops.io"
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
-      email: ""
-      enabled: false
-      production: false
+      email: "james.knott@ghettolabs.io"
+      enabled: true
+      production: true
   repository: nexus
   secretStorage: gsm
   vault: {}
