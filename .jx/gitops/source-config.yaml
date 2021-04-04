@@ -10,6 +10,7 @@ spec:
     repositories:
     - name: gkecloud
     - name: mybasicnodeapp
+    - name: mynodetest
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
