@@ -11,6 +11,7 @@ spec:
     - name: gkecloud
     - name: mybasicnodeapp
     - name: mynodetest
+    - name: testingwebhook
     scheduler: in-repo
   slack:
     channel: '#jenkins-x-pipelines'
