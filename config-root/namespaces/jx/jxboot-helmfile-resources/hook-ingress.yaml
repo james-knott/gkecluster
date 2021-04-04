@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: hook
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.class: nginx
+  name: hook
   namespace: jx
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'
@@ -15,8 +15,9 @@ spec:
           - backend:
               serviceName: hook
               servicePort: 80
-      host: hook-jx.walk.jenkinsxlabs.com
+            path: "/hook"
+      host: hook-jx.dev.cloudgitops.io
   tls:
     - hosts:
-        - hook-jx.walk.jenkinsxlabs.com
-      secretName: "tls-walk-jenkinsxlabs-com-p"
+        - hook-jx.dev.cloudgitops.io
+      secretName: "tls-dev-cloudgitops-io-p"

@@ -5,10 +5,10 @@ metadata:
   name: jenkins-x-controllerbuild
   labels:
     app: jx-build-controller
-    chart: jx-build-controller-0.0.27
+    chart: jx-build-controller-0.1.0
     release: jx-build-controller
     heritage: Helm
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
-    iam.gke.io/gcp-service-account: tf-jx-legal-goose-bc@jenkins-x-labs-bdd.iam.gserviceaccount.com
+    iam.gke.io/gcp-service-account: jenkins-pipeline-bc@jenkins-terraform-309606.iam.gserviceaccount.com
   namespace: jx

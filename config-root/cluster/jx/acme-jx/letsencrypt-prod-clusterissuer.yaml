@@ -8,17 +8,17 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: "rawlingsj80@gmail.com"
+    email: "james.knott@ghettolabs.io"
     # Name of a secret used to store the ACME account private key
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
       - selector:
           dnsNames:
-            - "*.walk.jenkinsxlabs.com"
-            - "walk.jenkinsxlabs.com"
+            - "*.dev.cloudgitops.io"
+            - "dev.cloudgitops.io"
         # ACME DNS-01 provider configurations
         dns01:
           cloudDNS:
             # The project in which to update the DNS zone
-            project: "jenkins-x-labs-bdd"
+            project: "jenkins-terraform-309606"

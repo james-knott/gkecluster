@@ -16,8 +16,8 @@ spec:
               serviceName: jenkins-x-chartmuseum
               servicePort: 8080
             path: "/"
-      host: chartmuseum-jx.walk.jenkinsxlabs.com
+      host: chartmuseum-jx.dev.cloudgitops.io
   tls:
     - hosts:
-        - chartmuseum-jx.walk.jenkinsxlabs.com
-      secretName: "tls-walk-jenkinsxlabs-com-p"
+        - chartmuseum-jx.dev.cloudgitops.io
+      secretName: "tls-dev-cloudgitops-io-p"

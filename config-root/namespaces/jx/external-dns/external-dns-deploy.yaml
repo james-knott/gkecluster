@@ -26,6 +26,8 @@ spec:
         app.kubernetes.io/instance: external-dns
         app.kubernetes.io/managed-by: Helm
       annotations:
+        prometheus.io/port: "7979"
+        prometheus.io/scrape: "true"
     spec:
       securityContext:
         fsGroup: 1001
@@ -53,14 +55,14 @@ spec:
             # Generic arguments
             - --log-level=info
             - --log-format=text
-            - --domain-filter=walk.jenkinsxlabs.com
+            - --domain-filter=dev.cloudgitops.io
             - --policy=upsert-only
             - --provider=google
             - --registry=txt
             - --interval=1m
             - --source=ingress
             # Google Arguments
-            - --google-project=jenkins-x-labs-bdd
+            - --google-project=jenkins-terraform-309606
           env:
           # Google environment variables
           ports:

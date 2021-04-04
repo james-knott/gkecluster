@@ -4,30 +4,28 @@ kind: Deployment
 metadata:
   name: lighthouse-foghorn
   labels:
-    draft: draft-app
-    chart: "lighthouse-0.0.918"
+    chart: "lighthouse-1.0.15"
     app: lighthouse-foghorn
     gitops.jenkins-x.io/pipeline: 'namespaces'
   namespace: jx
   annotations:
     wave.pusher.com/update-on-config-change: 'true'
-    jenkins-x.io/hash: 'eb51a0efefae8ff66c6779696dfa1dc5c341c42779b6838ffcad639465192d93'
 spec:
   replicas: 1
   selector:
     matchLabels:
-      draft: draft-app
       app: lighthouse-foghorn
   template:
     metadata:
       labels:
-        draft: draft-app
         app: lighthouse-foghorn
+      annotations:
+        jenkins-x.io/hash: '124c3936be4c09030b834530e3131426f6e0e906999fb1575c061155bb5bec9b'
     spec:
       serviceAccountName: lighthouse-foghorn
       containers:
         - name: lighthouse-foghorn
-          image: gcr.io/jenkinsxio/lighthouse-foghorn:0.0.918
+          image: gcr.io/jenkinsxio/lighthouse-foghorn:1.0.15
           imagePullPolicy: IfNotPresent
           args:
             - "--namespace=jx"
@@ -37,7 +35,7 @@ spec:
             - name: "GIT_SERVER"
               value: "https://github.com"
             - name: "GIT_USER"
-              value: jenkins-x-labs-bot
+              value: ghettolabs-bot
             - name: "GIT_TOKEN"
               valueFrom:
                 secretKeyRef:
@@ -48,6 +46,7 @@ spec:
                 secretKeyRef:
                   name: "lighthouse-hmac-token"
                   key: hmac
+                  optional: false
             - name: "JX_LOG_FORMAT"
               value: "json"
             - name: "LOGRUS_FORMAT"
@@ -63,9 +62,12 @@ spec:
             - name: LIGHTHOUSE_DASHBOARD_TEMPLATE
               value: "namespaces/{{ .Namespace }}/pipelineruns/{{ .PipelineRun }}"
             - name: LIGHTHOUSE_VERSIONSTREAM_JENKINS_X_JX3_PIPELINE_CATALOG
-              value: "29c2660eef53d37c7402a040adfbb30419f51daa"
+              value: "c9d3584714017f8a59e429f5c3a390c501827f26"
           resources:
             limits:
               cpu: 100m
               memory: 256Mi
+            requests:
+              cpu: 80m
+              memory: 128Mi
       terminationGracePeriodSeconds: 180

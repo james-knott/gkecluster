@@ -11,7 +11,7 @@ metadata:
 spec:
   source:
     ref: "master"
-    url: https://github.com/cb-kubecd/jx3-demo-walk-cluster.git
+    url: https://github.com/james-knott/gkecluster.git
   kind: Development
   label: Development
   namespace: jx
@@ -30,7 +30,7 @@ spec:
     gitServer: https://github.com
     helmTemplate: true
     kubeProvider: "gke"
-    pipelineUsername: "jenkins-x-labs-bot"
+    pipelineUsername: "ghettolabs-bot"
     pipelineUserEmail: "jenkins-x@googlegroups.com"
     prowConfig: Scheduler
     importMode: YAML
@@ -40,7 +40,7 @@ spec:
     versionStreamRef: "master"
     useGitOps: true
     storageLocations:
-      - bucketUrl: gs://logs-tf-jx-still-pug-05a0bb628b64
+      - bucketUrl: gs://logs-jenkins-pipeline-a9ce7b13e874
         classifier: logs
-      - bucketUrl: gs://reports-tf-jx-still-pug-05a0bb628b64
+      - bucketUrl: gs://reports-jenkins-pipeline-a9ce7b13e874
         classifier: reports

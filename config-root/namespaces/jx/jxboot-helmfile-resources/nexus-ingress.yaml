@@ -16,8 +16,8 @@ spec:
               serviceName: nexus
               servicePort: 80
             path: "/"
-      host: nexus-jx.walk.jenkinsxlabs.com
+      host: nexus-jx.dev.cloudgitops.io
   tls:
     - hosts:
-        - nexus-jx.walk.jenkinsxlabs.com
-      secretName: "tls-walk-jenkinsxlabs-com-p"
+        - nexus-jx.dev.cloudgitops.io
+      secretName: "tls-dev-cloudgitops-io-p"

@@ -4,14 +4,12 @@ kind: Deployment
 metadata:
   name: lighthouse-keeper
   labels:
-    draft: draft-app
-    chart: "lighthouse-0.0.918"
+    chart: "lighthouse-1.0.15"
     app: lighthouse-keeper
     gitops.jenkins-x.io/pipeline: 'namespaces'
   namespace: jx
   annotations:
     wave.pusher.com/update-on-config-change: 'true'
-    jenkins-x.io/hash: 'eb51a0efefae8ff66c6779696dfa1dc5c341c42779b6838ffcad639465192d93'
 spec:
   replicas: 1
   strategy:
@@ -21,21 +19,22 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-      draft: draft-app
       app: lighthouse-keeper
   template:
     metadata:
       annotations:
         ad.datadoghq.com/keeper.logs: '[{"source":"lighthouse","service":"keeper"}]'
+        prometheus.io/port: "9090"
+        prometheus.io/scrape: "true"
+        jenkins-x.io/hash: '124c3936be4c09030b834530e3131426f6e0e906999fb1575c061155bb5bec9b'
       labels:
-        draft: draft-app
         app: lighthouse-keeper
     spec:
       serviceAccountName: lighthouse-keeper
       terminationGracePeriodSeconds: 30
       containers:
         - name: lighthouse-keeper
-          image: gcr.io/jenkinsxio/lighthouse-keeper:0.0.918
+          image: gcr.io/jenkinsxio/lighthouse-keeper:1.0.15
           imagePullPolicy: IfNotPresent
           args:
             - "--namespace=jx"
@@ -64,7 +63,7 @@ spec:
             - name: "GIT_SERVER"
               value: "https://github.com"
             - name: "GIT_USER"
-              value: jenkins-x-labs-bot
+              value: ghettolabs-bot
             - name: "GIT_TOKEN"
               valueFrom:
                 secretKeyRef:
@@ -76,6 +75,8 @@ spec:
               value: "json"
             - name: "LIGHTHOUSE_KEEPER_STATUS_CONTEXT_LABEL"
               value: "Lighthouse Merge Status"
+            - name: LIGHTHOUSE_TRIGGER_ON_MISSING
+              value: "disable"
           resources:
             limits:
               cpu: 400m

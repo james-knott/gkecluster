@@ -1,7 +1,7 @@
 # Source: jxboot-helmfile-resources/templates/ingress-config-configmap.yaml
 apiVersion: v1
 data:
-  domain: "walk.jenkinsxlabs.com"
+  domain: "dev.cloudgitops.io"
   email: ""
   exposer: "Ingress"
   issuer: ""

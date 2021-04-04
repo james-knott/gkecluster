@@ -12,10 +12,10 @@ spec:
   provider: "https://github.com"
   providerKind: 'github'
   providerName: 'github'
-  org: "cb-kubecd"
-  repo: "jx3-demo-walk-cluster"
-  httpCloneURL: "https://github.com/cb-kubecd/jx3-demo-walk-cluster.git"
-  url: "https://github.com/cb-kubecd/jx3-demo-walk-cluster.git"
+  org: "james-knott"
+  repo: "gkecluster"
+  httpCloneURL: "https://github.com/james-knott/gkecluster.git"
+  url: "https://github.com/james-knott/gkecluster.git"
   scheduler:
     kind: Scheduler
     name: "in-repo"

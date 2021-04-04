@@ -4,11 +4,15 @@ data:
     approve:
     - lgtm_acts_as_approve: true
       repos:
-      - cb-kubecd/jx3-demo-walk-cluster
+      - james-knott/gkecluster
       require_self_approval: true
     - lgtm_acts_as_approve: true
       repos:
-      - cb-kubecd/jx3-golang-demo
+      - james-knott/gkecloud
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - james-knott/mybasicnodeapp
       require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
@@ -19,12 +23,38 @@ data:
           name: config
         env/prow/plugins.yaml:
           name: plugins
+    external_plugins:
+      james-knott/gkecloud:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      james-knott/gkecluster:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      james-knott/mybasicnodeapp:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
     heart: {}
     label:
       additional_labels: null
     owners: {}
     plugins:
-      cb-kubecd/jx3-demo-walk-cluster:
+      james-knott/gkecloud:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      james-knott/gkecluster:
       - config-updater
       - approve
       - assign
@@ -41,7 +71,7 @@ data:
       - cat
       - dog
       - pony
-      cb-kubecd/jx3-golang-demo:
+      james-knott/mybasicnodeapp:
       - approve
       - assign
       - blunderbuss
@@ -67,10 +97,13 @@ data:
       xxl: 0
     triggers:
     - repos:
-      - cb-kubecd/jx3-demo-walk-cluster
+      - james-knott/gkecluster
       trusted_org: todo
     - repos:
-      - cb-kubecd/jx3-golang-demo
+      - james-knott/gkecloud
+      trusted_org: todo
+    - repos:
+      - james-knott/mybasicnodeapp
       trusted_org: todo
     welcome:
     - message_template: Welcome

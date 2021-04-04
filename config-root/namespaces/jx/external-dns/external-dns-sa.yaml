@@ -10,5 +10,5 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     gitops.jenkins-x.io/pipeline: 'namespaces'
   annotations:
-    iam.gke.io/gcp-service-account: tf-jx-legal-goose-dn@jenkins-x-labs-bdd.iam.gserviceaccount.com
+    iam.gke.io/gcp-service-account: jenkins-pipeline-dn@jenkins-terraform-309606.iam.gserviceaccount.com
   namespace: jx

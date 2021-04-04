@@ -6,7 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/name: jx-pipelines-visualizer
     app.kubernetes.io/instance: "jx-pipelines-visualizer"
-    helm.sh/chart: jx-pipelines-visualizer-1.1.2
+    helm.sh/chart: jx-pipelines-visualizer-1.2.0
     app.kubernetes.io/version: "latest"
     app.kubernetes.io/managed-by: "Helm"
     gitops.jenkins-x.io/pipeline: 'namespaces'
@@ -17,13 +17,13 @@ metadata:
   namespace: jx
 spec:
   rules:
-    - host: dashboard-jx.walk.jenkinsxlabs.com
+    - host: dashboard-jx.dev.cloudgitops.io
       http:
         paths:
           - backend:
               serviceName: jx-pipelines-visualizer
               servicePort: http
   tls:
-    - secretName: tls-walk-jenkinsxlabs-com-p
+    - secretName: tls-dev-cloudgitops-io-p
       hosts:
-        - dashboard-jx.walk.jenkinsxlabs.com
+        - dashboard-jx.dev.cloudgitops.io
