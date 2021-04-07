@@ -10,6 +10,9 @@ data:
         james-knott/gkecloud: true
         james-knott/gkecluster: true
         james-knott/mybasicnodeapp: true
+        james-knott/mynodetest: true
+        james-knott/testingquickstart: true
+        james-knott/testingwebhook: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -24,6 +27,9 @@ data:
         james-knott/gkecloud: merge
         james-knott/gkecluster: merge
         james-knott/mybasicnodeapp: merge
+        james-knott/mynodetest: merge
+        james-knott/testingquickstart: merge
+        james-knott/testingwebhook: merge
       queries:
       - labels:
         - approved
@@ -37,6 +43,9 @@ data:
         - james-knott/gkecluster
         - james-knott/gkecloud
         - james-knott/mybasicnodeapp
+        - james-knott/mynodetest
+        - james-knott/testingquickstart
+        - james-knott/testingwebhook
       - labels:
         - updatebot
         missingLabels:
@@ -49,6 +58,9 @@ data:
         - james-knott/gkecluster
         - james-knott/gkecloud
         - james-knott/mybasicnodeapp
+        - james-knott/mynodetest
+        - james-knott/testingquickstart
+        - james-knott/testingwebhook
       target_url: http://dashboard-jx.dev.cloudgitops.io
 kind: ConfigMap
 metadata:

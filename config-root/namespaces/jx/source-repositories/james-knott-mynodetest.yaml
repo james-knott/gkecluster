@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: james-knott
+    provider: github
+    repository: mynodetest
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: james-knott-mynodetest
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/james-knott/mynodetest.git
+  org: james-knott
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: mynodetest
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/james-knott/mynodetest

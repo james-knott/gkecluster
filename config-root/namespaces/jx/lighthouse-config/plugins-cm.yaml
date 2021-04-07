@@ -14,6 +14,18 @@ data:
       repos:
       - james-knott/mybasicnodeapp
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - james-knott/mynodetest
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - james-knott/testingquickstart
+      require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - james-knott/testingwebhook
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -31,6 +43,15 @@ data:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
       james-knott/mybasicnodeapp:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      james-knott/mynodetest:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      james-knott/testingquickstart:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      james-knott/testingwebhook:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
     heart: {}
@@ -87,6 +108,54 @@ data:
       - cat
       - dog
       - pony
+      james-knott/mynodetest:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      james-knott/testingquickstart:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
+      james-knott/testingwebhook:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
     requiresig: {}
     sigmention: {}
     size:
@@ -104,6 +173,15 @@ data:
       trusted_org: todo
     - repos:
       - james-knott/mybasicnodeapp
+      trusted_org: todo
+    - repos:
+      - james-knott/mynodetest
+      trusted_org: todo
+    - repos:
+      - james-knott/testingquickstart
+      trusted_org: todo
+    - repos:
+      - james-knott/testingwebhook
       trusted_org: todo
     welcome:
     - message_template: Welcome
